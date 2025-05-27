@@ -12,13 +12,13 @@ public class NonRepeatedCharacters {
 
         String str = "JavaProgramming";
 
-       List<Character> nonRepeatedChars = str.chars().mapToObj(c ->(char) c)
-                       .collect(Collectors.groupingBy(c->c,Collectors.counting()))
-                       .entrySet().stream().filter(entry->entry.getValue()==1)
-                       .map(Map.Entry::getKey).collect(Collectors.toList());
+        List<Character> collect = str.chars().mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+                .entrySet().stream().filter(entry -> entry.getValue() == 1)
+                .map(Map.Entry::getKey).collect(Collectors.toList());
 
 
-        System.out.println(nonRepeatedChars);
+        System.out.println(collect);
 
 
         List<String> stringList = Arrays.asList("Apple", "Banana", "Carrot");

@@ -16,7 +16,8 @@ public class HighestSalarySecond {
 //            .sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
 //
 //    System.out.println("2nd Highest Salary: "+secondSalary);
-        Optional<Integer> min = secondHighest.stream().distinct().sorted(Comparator.reverseOrder()).limit(2).min(Integer::compareTo);
+        Optional<Integer> min = secondHighest.stream().distinct().sorted(Comparator.reverseOrder())
+                .limit(2).min(Integer::compareTo);
         if (min.isPresent()) {
             System.out.println(min.get());
         } else if (min.isEmpty()) {
